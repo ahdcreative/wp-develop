@@ -1,0 +1,25 @@
+{
+  "name": "Wordpress Core Development by AHDCreative",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  // Features to add to the container
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils": {
+      "username": "ahdcreative"
+    },
+    "ghcr.io/devcontainers/features/node" : {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker" : {},
+    "ghcr.io/devcontainers/features/git": {}
+  },
+  "onCreateCommand": "sudo chmod +x .devcontainer/install-tools.sh && .devcontainer/install-tools.sh",
+  "postCreateCommand": "sudo chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
+  "forwardPorts": [
+    8080
+  ],
+  "remoteUser": "ahdcreative"
+
+}
