@@ -22,5 +22,11 @@
       "lint:errors": "@lint -n",
       "test": [ "Composer\\Config::disableProcessTimeout", "@php ./vendor/phpunit/phpunit/phpunit" ]
     }
-  }
+  },
+	"name": "ahdcreative/wordpress",
+	"license": "MIT",
+	"homepage": "https://wp.ahd-creative.agency",
+	"support": {
+		"issues": "https://support.ahd-reative.agency"
+	}
 }
