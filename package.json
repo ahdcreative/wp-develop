@@ -170,5 +170,30 @@
 		"underscore": "1.13.6",
 		"whatwg-fetch": "3.6.17",
 		"wicg-inert": "3.1.2"
+	},
+	"scripts": {
+		"build": "grunt build",
+		"build:dev": "grunt build --dev",
+		"dev": "grunt watch --dev",
+		"test": "grunt test",
+		"watch": "grunt watch",
+		"grunt": "grunt",
+		"lint:jsdoc": "wp-scripts lint-js",
+		"lint:jsdoc:fix": "wp-scripts lint-js --fix",
+		"env:start": "node ./tools/local-env/scripts/start.js",
+		"env:stop": "node ./tools/local-env/scripts/docker.js down",
+		"env:restart": "npm run env:stop && npm run env:start",
+		"env:clean": "node ./tools/local-env/scripts/docker.js down -v --remove-orphans",
+		"env:reset": "node ./tools/local-env/scripts/docker.js down --rmi all -v --remove-orphans",
+		"env:install": "node ./tools/local-env/scripts/install.js",
+		"env:cli": "node ./tools/local-env/scripts/docker.js run cli",
+		"env:logs": "node ./tools/local-env/scripts/docker.js logs",
+		"env:pull": "node ./tools/local-env/scripts/docker.js pull",
+		"test:performance": "wp-scripts test-playwright --config tests/performance/playwright.config.js",
+		"test:php": "node ./tools/local-env/scripts/docker.js run -T php composer update -W && node ./tools/local-env/scripts/docker.js run php ./vendor/bin/phpunit",
+		"test:e2e": "wp-scripts test-playwright --config tests/e2e/playwright.config.js",
+		"test:visual": "wp-scripts test-playwright --config tests/visual-regression/playwright.config.js",
+		"sync-gutenberg-packages": "grunt sync-gutenberg-packages",
+		"postsync-gutenberg-packages": "grunt wp-packages:sync-stable-blocks && grunt build --dev && grunt build"
 	}
 }
