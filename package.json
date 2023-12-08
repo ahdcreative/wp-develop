@@ -73,7 +73,7 @@
 		"wait-on": "7.2.0",
 		"webpack": "5.89.0",
 		"webpack-livereload-plugin": "3.0.2",
-		"prettier": "npm:wp-prettier@2.6.2"
+		"prettier": "npm:wp-prettier@3.0.3"
 	},
 	"dependencies": {
 		"@emotion/is-prop-valid": "0.8.8",
