@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   app:
-    image: wordpress
+    image: wordpress@sha256:b2d7e3153c8a96f90305a3102fb6439335237fb1a9655b617d15c5168ce2f7a3
     restart: always
     ports:
       - 8080:80
@@ -15,7 +15,7 @@ services:
       - ../..:/workspaces:cached
 
   db:
-    image: mariadb
+    image: mariadb@sha256:759869cb6f003234a95c6384cdee245b4bce7de26913fe607a8110362c0c007d
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: exampledb
